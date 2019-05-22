@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
 using ProductShop.Data;
-
+using System.Web.Http.Cors;
 
 namespace ProductShop.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
+        
         private IProductRepository _repository;
 
         public ProductController()
